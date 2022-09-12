@@ -27,7 +27,7 @@ main {
     margin-inline: 4rem;
 }
 
-section {
+section.cronometro {
     height: 25rem;
     display: flex;
     flex-direction: column;

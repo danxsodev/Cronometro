@@ -1,43 +1,44 @@
-var sec=0
-var min=0
-var hr=0
+var seconds=0;
+var minutes=0;
+var hours=0;
+var interval;
 
-var interval
-
-function twoDigits(digit){
-    if(digit<10){
-        return('0'+digit);
-    }else{
+function twoDigits(digit) {
+    if(digit < 10) {
+        return("0" + digit);
+    }
+    else {
         return(digit);
     }
 }
 
-function start(){
+function start() {
     watch();
-    interval= setInterval(watch,1000);
+    interval = setInterval(watch,1000);
 }
 
-function pause(){
+function pause() {
     clearInterval(interval);
 }
 
-function stop(){
+function stop() {
     clearInterval(interval);
-    sec=0;
-    min=0;
+    seconds=0;
+    minutes=0;
     window.alert("Quer parar o countdown?");
-    document.getElementById('watch').innerText="00:00:00";
+    document.getElementById("watch").innerText="00:00:00";
 }
 
-function watch(){
-    sec++;
-    if(sec==60){
-        min++;
-        sec=0;
-        if(min==60){
-            min=0;
-            hr++;
+function watch() {
+    seconds++;
+    if(seconds==60){
+        minutes++;
+        seconds=0;
+        if(minutes==60){
+            minutes=0;
+            hours++;
         }
     }
-    document.getElementById('watch').innerText=twoDigits(hr)+':'+twoDigits(min)+':'+twoDigits(sec);
+    document.getElementById("watch").innerText=twoDigits(hours)+":"+twoDigits(minutes)+":"+twoDigits(seconds);
 }
+
